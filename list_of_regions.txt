@@ -10,5 +10,7 @@ Delaware, Maryland, Virginia, West Virginia, Kentucky, North Carolina, South Car
 West:
 Montana, Idaho, Wyoming, Colorado, New Mexico, Arizona, Utah, Nevada, California, Oregon, Washington, Alaska, and Hawaii
 
+Territories:
+American Samoa, US Virgin Islands
 
 https://www.businessinsider.com/regions-of-united-states-2018-5#the-us-census-bureau-divides-the-united-states-into-four-regions-theres-the-northeast--1
