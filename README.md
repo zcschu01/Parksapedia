@@ -1,2 +1,2 @@
-# Parkapedia
-UofL Software Engineering project. Website for national parks to see the best parks to travel to for specific things.
+# Parksapedia
+UofL Software Engineering project. Travel planning site complete with a questionnaire :)
