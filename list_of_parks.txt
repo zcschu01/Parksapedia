@@ -1,64 +1,75 @@
+Northeast:
 Acadia - Maine
-American Samoa - American Samoan Islands
-Arches - Utah
+
+Midwest:
+Cuyahoga Valley - Ohio
+Isle Royale - Michigan
+Indiana Dunes - Indiana
 Badlands - South Dakota
-Big Bend - Texas
+Theodore Roosevelt - North Dakota
+Wind Cave - South Dakota
+Gateway Arch - Missouri
+Voyageurs - Minnesota
+
+South:
+Mammoth Cave - Kentucky
 Biscayne - Florida
-Black Canyon of the Gunnison - Colorado
+Dry Tortugas - Florida
+Everglades - Florida
+Big Bend - Texas
+Guadalupe Mountains - Texas
+Hot Springs - Arkansas
+Shenandoah - Virginia
+Congaree - South Carolina
+Great Smoky Mountains - Tennessee / North Carolina
+
+West:
+Channel Islands - California
+Death Valley - California / Nevada
+Joshua Tree - California
+Kings Canyon - California
+Lassen Volcanic - California
+Pinnacles - California
+Redwood - California
+Sequoia - California
+Yosemite - California
+Arches - Utah
 Bryce Canyon - Utah
 Canyonlands - Utah
 Capitol Reef - Utah
-Carlsbad Caverns- New Mexico
-Channel Islands - California
-Congaree - South Carolina
-Crater Lake - Oregon
-Cuyahoga Valley - Ohio
-Death Valley - California / Nevada
+Zion - Utah
 Denali - Alaska
-Dry Tortugas - Florida
-Everglades - Florida
 Gates of the Arctic - Alaska
-Gateway Arch - Missouri
-Glacier - Montana
 Glacier Bay - Alaska
-Grand Canyon - Arizona
-Grand Teton - Wyoming
-Great Basin - Nevada
-Great Sand Dunes - Colorado
-Great Smoky Mountains - Tennessee / North Carolina
-Guadalupe Mountains - Texas
-Haleakala - Hawaii
-Hawaii Volcanoes - Hawaii
-Hot Springs - Arkansas
-Indiana Dunes - Indiana
-Isle Royale - Michigan
-Joshua Tree - California
 Katmai - Alaska
 Kenai Fjords - Alaska
-Kings Canyon - California
 Kobuk Valley - Alaska
 Lake Clark - Alaska
-Lassen Volcanic - California
-Mammoth Cave - Kentucky
+Wrangell--St. Elias - Alaska
+Black Canyon of the Gunnison - Colorado
+Great Sand Dunes - Colorado
 Mesa Verde - Colorado
+Rocky Mountain - Colorado
+Grand Canyon - Arizona
+Petrified Forest - Arizona
+Saguaro - Arizona
+Great Basin - Nevada
+Crater Lake - Oregon
 Mount Rainier - Washington
 North Cascades - Washington
 Olympic - Washington
-Petrified Forest - Arizona
-Pinnacles - California
-Redwood - California
-Rocky Mountain - Colorado
-Saguaro - Arizona
-Sequoia - California
-Shenandoah - Virginia
-Theodore Roosevelt - North Dakota
-Virgin Islands - Virgin Islands
-Voyageurs - Minnesota
+Haleakala - Hawaii
+Hawaii Volcanoes - Hawaii
+Glacier - Montana
+Grand Teton - Wyoming
 White Sands - New Mexico
-Wind Cave - South Dakota
-Wrangell--St. Elias - Alaska
 Yellowstone - Wyoming / Montana / Idaho
-Yosemite - California
-Zion - Utah
+Carlsbad Caverns- New Mexico
+
+Territories:
+American Samoa - American Samoan Islands
+Virgin Islands - Virgin Islands
+
+
 
 ** This list was compiled from https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States **
