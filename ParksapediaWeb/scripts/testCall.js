@@ -11,5 +11,9 @@ function GetParks() {
     error: function (e) {
         $("#divResult").html("Something Wrong.");
     }
-});
+}).done(function(data){
+        $.each(data, function(key,item) {
+            $('<li>', {text: formatItem(item)}).appendTo($('#park-name'))
+        })
+    });
 }
