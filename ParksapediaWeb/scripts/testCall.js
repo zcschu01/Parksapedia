@@ -1,11 +1,15 @@
-$(document).ready(function () {
-    // Send an AJAX request
-    $.getJSON("/api/products")
-        .done(function (data) {
-            // On success, 'data' contains a list of products.
-            $.each(data, function (key, item) {
-                // Add a list item for the product.
-                $('<li>', { text: formatItem(item) }).appendTo($('#products'));
-            });
-        });
+function GetParks() {     
+    $.ajax({
+    type: "GET",
+    url: 'https://localhost:44322/api/Parks',
+    data: "",
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    success: function (msg) {
+        $("#divResult").html("success");
+    },
+    error: function (e) {
+        $("#divResult").html("Something Wrong.");
+    }
 });
+}
