@@ -1,19 +1,27 @@
-function GetParks() {     
+function GetParks() {
     $.ajax({
-    type: "GET",
-    url: 'https://localhost:44322/api/Parks',
-    data: "",
-    contentType: "application/json; charset=utf-8",
-    dataType: "json",
-    success: function (msg) {
-        $("#divResult").html("success");
-    },
-    error: function (e) {
-        $("#divResult").html("Something Wrong.");
-    }
-}).done(function(data){
-        $.each(data, function(key,item) {
-            $('<li>', {text: formatItem(item)}).appendTo($('#park-name'))
-        })
-    });
+        type: "GET",
+        url: 'https://localhost:44322/api/Parks',
+        data: "",
+        contentType: "application/json",
+        // headers: {"Access-Control-Allow-Origin": "*"},
+        crossDoman: true,
+        dataType: "json",
+        success: function (data) {
+            var pList = $('ul.parklist');
+            $.each(data, function (i) {
+                var li = $('<li/>')
+                    .addClass('park-name')
+                    .text(data[i])
+                    .appendTo(pList);
+                // var aaa = $('<a/>')
+                //     .addClass('ui-all')
+                //     .text(countries[i])
+                //     .appendTo(li);
+            });
+        },
+        error: function (e) {
+            alert("Didn't return anything!");
+        }
+    })
 }
