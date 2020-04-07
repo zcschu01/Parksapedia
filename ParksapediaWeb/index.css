@@ -12,3 +12,15 @@ html {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 5em;
 }
+
+.form {
+    margin-bottom: 1em;
+    background-color: white;
+    overflow: overlay;
+    display: inline-block;
+    padding: 2em;
+}
+
+.question-header{
+    color: red;
+}

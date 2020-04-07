@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Parksapedia</title>
@@ -8,15 +9,46 @@
   <link rel="stylesheet" href="index.css">
   <script src="scripts/testButton.js"></script>
   <script src="scripts/testCall.js"></script>
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+  <script src="Classes/form.js"></script>
+  <script src="scripts/validate.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
 </head>
+
 <body>
   <!-- <script src="js/scripts.js"></script> -->
   <h1 class="title">Welcome to Parksapedia!</h1>
-  <button onclick="GetParks()">Click Me!</button>
-  <ul class="parklist"></ul>
+
+  <div class="form">
+      <h2 class="question-header">Please pick a location</h2>
+      <div class="location-questions">
+        <input type="radio" id="ne" name="location-r" value="Northeast" checked>
+        <label for="ne">Northeast</label><br>
+        <input type="radio" id="s" name="location-r" value="South">
+        <label for="s">South</label><br>
+        <input type="radio" id="mw" name="location-r" value="Midwest">
+        <label for="mw">Midwest</label><br>
+        <input type="radio" id="w" name="location-r" value="West">
+        <label for="w">West</label><br>
+        <input type="radio" id="t" name="location-r" value="Territories">
+        <label for="t">Territories</label><br>
+      </div>
+
+      <h2 class="question-header">Do you want dog friendly parks?</h2>
+      <div class="park-dog-friendly">
+        <input type="radio" id="y" name="park-dog-friendly-r" value="yes" checked>
+        <label for="y">Yes</label><br>
+        <input type="radio" id="n" name="park-dog-friendly-r" value="no">
+        <label for="n">No</label><br>
+      </div>
+      <br>
+      <button id="submit" onclick="validate()">Submit</button>
+  </div>
+  <div>
+    <button onclick="GetParks()">Click Me!</button>
+    <ul class="parklist"></ul>
+  </div>
+
 </body>
+
 </html>
