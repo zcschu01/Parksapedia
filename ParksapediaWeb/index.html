@@ -16,11 +16,11 @@
 </head>
 
 <body>
-  <!-- <script src="js/scripts.js"></script> -->
   <h1 class="title">Welcome to Parksapedia!</h1>
 
   <div class="form">
-      <h2 class="question-header">Please pick a location</h2>
+    <div class="questions">
+      <h2 class="question-header">What region do you want?</h2>
       <div class="location-questions">
         <input type="radio" id="ne" name="location-r" value="Northeast" checked>
         <label for="ne">Northeast</label><br>
@@ -41,8 +41,44 @@
         <input type="radio" id="n" name="park-dog-friendly-r" value="no">
         <label for="n">No</label><br>
       </div>
+
+      <h2 class="question-header">What landscape(s) do you want?</h2>
+      <div class="region-questions">
+        <input type="checkbox" id="desert" name="landscape-c" value="Desert" checked>
+        <label for="desert">Desert</label><br>
+        <input type="checkbox" id="plain" name="landscape-c" value="Plain">
+        <label for="plain">Plain</label><br>
+        <input type="checkbox" id="wetland" name="landscape-c" value="Wetland">
+        <label for="wetland">Wetland</label><br>
+        <input type="checkbox" id="mountains" name="landscape-c" value="Mountains">
+        <label for="mountains">Mountains</label><br>
+        <input type="checkbox" id="cliff" name="landscape-c" value="Cliff">
+        <label for="cliff">Cliff</label><br>
+        <input type="checkbox" id="coast" name="landscape-c" value="Coast">
+        <label for="coast">Coast</label><br>
+        <input type="checkbox" id="glacier" name="landscape-c" value="Glacier">
+        <label for="glacier">Glacier</label><br>
+        <input type="checkbox" id="forest" name="landscape-c" value="Forest">
+        <label for="forest">Forest</label><br>
+        <input type="checkbox" id="intertidal" name="landscape-c" value="Intertidal">
+        <label for="intertidal">Intertidal</label><br>
+        <input type="checkbox" id="canyon" name="landscape-c" value="Canyon">
+        <label for="canyon">Canyon</label><br>
+        <input type="checkbox" id="cave" name="landscape-c" value="Cave">
+        <label for="cave">Cave</label><br>
+        <input type="checkbox" id="tundra" name="landscape-c" value="Tundra">
+        <label for="tundra">Tundra</label><br>
+        <input type="checkbox" id="taiga" name="landscape-c" value="Taiga">
+        <label for="taiga">Taiga</label><br>
+        <input type="checkbox" id="volcanoes" name="landscape-c" value="Volcanoes">
+        <label for="volcanoes">Volcanoes</label><br>
+      </div>
+
       <br>
-      <button id="submit" onclick="validate()">Submit</button>
+      <div id="submit">
+        <button onclick="validate()">Submit</button>
+      </div>
+    </div>
   </div>
   <div>
     <button onclick="GetParks()">Click Me!</button>

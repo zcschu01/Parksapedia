@@ -6,6 +6,10 @@ html {
     background-size: cover;
 }
 
+body {
+    text-align: center;
+}
+
 .title {
     text-align: center;
     color: black;
@@ -13,12 +17,22 @@ html {
     font-size: 5em;
 }
 
+#submit {
+    text-align: center;
+}
+
 .form {
-    margin-bottom: 1em;
-    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(255, 255, 255, 0.75);
     overflow: overlay;
     display: inline-block;
     padding: 2em;
+    text-align: center;
+}
+
+.questions {
+    text-align: left;
 }
 
 .question-header{
