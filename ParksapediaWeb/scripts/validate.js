@@ -1,8 +1,7 @@
 function validate() {
-    let f = new form();
-    // var locationValues = $('input[type=checkbox]:checked').map(function(_, el) {
-    //     return $(el).val();
-    // }).get();
+    let f = new Form();
+    let data = new DataRequests();
+
     var regionValue = $("input[name='region-r']:checked").val();
     var dogValue = $("input[name='park-dog-friendly-r']:checked").val();
     var landscapeValues = $("input[name='landscape-c']:checked").map(function (_, el) {
@@ -17,14 +16,6 @@ function validate() {
     var lodgingValue = $("input[name='lodging-r']:checked").val();
     var campValue = $("input[name='camp-r']:checked").val();
 
-    console.log(regionValue + " was clicked");
-    console.log(dogValue + " was clicked");
-    console.log(landscapeValues + " was clicked");
-    console.log(wildlifeValues + " was clicked");
-    console.log(plantValues + " was clicked");
-    console.log(lodgingValue + " was clicked");
-    console.log(campValue + " was clicked");
-
     f.set_region(regionValue);
     if (dogValue == "Yes") {
         f.set_park_dog_friendly(true);
@@ -35,12 +26,23 @@ function validate() {
     f.set_landscapes(landscapeValues);
     f.set_wildlife(wildlifeValues);
     f.set_plants(plantValues);
-    f.set_lodging(lodgingValue);
-    f.set_campgrounds(campValue);
+    if (lodgingValue == "Yes") {
+        f.set_lodging(true);
+    }
+    else {
+        f.set_lodging(false);
+    }
+    if (campValue == "Yes") {
+        f.set_campgrounds(true);
+    }
+    else {
+        f.set_campgrounds(false);
+    }
 
     f.save_form();
+    data.SendForm();
 
-    var delay = 2000; 
-    var url = 'hiking-section.html';
-    setTimeout(function(){ window.location = url; }, delay);
+    // var delay = 2000; 
+    // var url = 'hiking-section.html';
+    // setTimeout(function(){ window.location = url; }, delay);
 }
