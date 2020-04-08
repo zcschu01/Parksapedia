@@ -1,8 +1,5 @@
 function validate() {
     let f = new form();
-    // var locationValues = $('input[type=checkbox]:checked').map(function(_, el) {
-    //     return $(el).val();
-    // }).get();
     var regionValue = $("input[name='region-r']:checked").val();
     var dogValue = $("input[name='park-dog-friendly-r']:checked").val();
     var landscapeValues = $("input[name='landscape-c']:checked").map(function (_, el) {
@@ -35,8 +32,18 @@ function validate() {
     f.set_landscapes(landscapeValues);
     f.set_wildlife(wildlifeValues);
     f.set_plants(plantValues);
-    f.set_lodging(lodgingValue);
-    f.set_campgrounds(campValue);
+    if (lodgingValue == "Yes") {
+        f.set_lodging(true);
+    }
+    else {
+        f.set_lodging(false);
+    }
+    if (campValue == "Yes") {
+        f.set_campgrounds(true);
+    }
+    else {
+        f.set_campgrounds(false);
+    }
 
     f.save_form();
 
