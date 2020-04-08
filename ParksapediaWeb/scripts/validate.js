@@ -40,7 +40,7 @@ function validate() {
 
     f.save_form();
 
-    var delay = 2000; 
-    var url = 'hiking-section.html';
-    setTimeout(function(){ window.location = url; }, delay);
+    // var delay = 2000; 
+    // var url = 'hiking-section.html';
+    // setTimeout(function(){ window.location = url; }, delay);
 }
