@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using ParksapediaAPI.Classes;
+using ParksapediaAPI.Models;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
-using ParksapediaAPI.Models;
 
 namespace ParksapediaAPI.Controllers
 {
@@ -12,8 +13,6 @@ namespace ParksapediaAPI.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            // return new string[] { "Acadia", "Montana" };
-
             Park park = new Park();
             using (NationalParkContext ctx = new NationalParkContext())
             {
@@ -25,25 +24,18 @@ namespace ParksapediaAPI.Controllers
 
         }
 
-        // GET: api/Parks/5
-        public string Get(int id)
+        // GET: api/Parks
+        [Route("api/GetParks")]
+        [HttpPost]
+        public bool Post([FromBody]Form form)
         {
-            return "value";
-        }
-
-        // POST: api/Parks
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT: api/Parks/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/Parks/5
-        public void Delete(int id)
-        {
+            if (form.landscapes != null &&
+                form.plants != null &&
+                form.region != null &&
+                form.wildlife != null)
+                return true;
+            else
+                return false;
         }
     }
 }
