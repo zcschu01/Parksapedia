@@ -31,8 +31,17 @@ body {
     text-align: center;
 }
 
-.questions {
+.required-questions {
     text-align: left;
+}
+
+.optional-questions {
+    text-align: left;
+    padding-top: 2em;
+}
+
+#optional {
+    font-style: italic;
 }
 
 .question-header{

@@ -46,4 +46,25 @@ class form {
         this.#campgrounds = c;
         console.log("Campgrounds changed to " + this.#campgrounds);
     }
+
+    save_form() {
+        localStorage.region = this.#region;
+        localStorage.park_dog_friendly = this.#park_dog_friendly;
+        localStorage.landscapes = this.#landscapes;
+        localStorage.wildlife = this.#wildlife;
+        localStorage.plants = this.#plants;
+        localStorage.lodging = this.#lodging;
+        localStorage.campgrounds = this.#campgrounds;
+    }
+
+    load_form() {
+        this.set_region(localStorage.region);
+        this.set_park_dog_friendly(localStorage.park_dog_friendly);
+        this.set_landscapes(localStorage.landscapes);
+        this.set_wildlife(localStorage.wildlife);
+        this.set_plants(localStorage.plants);
+        this.set_lodging(localStorage.lodging);
+        this.set_campgrounds(localStorage.campgrounds);
+    }
+
 }

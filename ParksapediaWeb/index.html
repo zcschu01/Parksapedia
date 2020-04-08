@@ -19,7 +19,7 @@
   <h1 class="title">Welcome to Parksapedia!</h1>
 
   <div class="form">
-    <div class="questions">
+    <div class="required-questions">
       <h2 class="question-header">What region do you want?</h2>
       <div class="region-questions">
         <input type="radio" id="ne" name="region-r" value="Northeast" checked>
@@ -82,8 +82,6 @@
         <label for="aquatic_mammal">Aquatic Mammals</label><br>
         <input type="checkbox" id="birds" name="wildlife-c" value="Birds">
         <label for="birds">Birds</label><br>
-        <input type="checkbox" id="mountains" name="wildlife-c" value="Mountains">
-        <label for="mountains">Mountains</label><br>
         <input type="checkbox" id="insect" name="wildlife-c" value="Insect">
         <label for="insect">Insect</label><br>
         <input type="checkbox" id="reptile" name="wildlife-c" value="Reptile">
@@ -167,11 +165,22 @@
         <button onclick="validate()">Submit</button>
       </div>
     </div>
+    <!-- <div class="optional-questions">
+      <p id="optional">The following questions are optional and do not need to be filled out</p>
+      <h2 class="question-header">Do you want dog friendly trails?</h2>
+      <div class="trail-dog-friendly">
+        <input type="radio" id="y" name="trail-dog-friendly-r" value="Yes">
+        <label for="y">Yes</label><br>
+        <input type="radio" id="n" name="trail-dog-friendly-r" value="No">
+        <label for="n">No</label><br>
+      </div>
+    </div> -->
+
   </div>
-  <div>
+  <!-- <div>
     <button onclick="GetParks()">Click Me!</button>
     <ul class="parklist"></ul>
-  </div>
+  </div> -->
 
 </body>
 
