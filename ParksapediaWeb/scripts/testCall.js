@@ -25,3 +25,27 @@ function GetParks() {
         }
     })
 }
+
+function SendForm() {
+    var form = { 
+        region: localStorage.region,
+        park_dog_friendly: localStorage.park_dog_friendly,
+        landscapes: localStorage.landscapes.split(','),
+        wildlife: localStorage.wildlife.split(','),
+        plants: localStorage.plants.split(','),
+        lodging: localStorage.lodging,
+        campgrounds: localStorage.campgrounds
+    };
+    $.ajax({
+        type: "POST",
+        data :JSON.stringify(form),
+        url: "https://localhost:44322/api/GetParks",
+        contentType: "application/json",
+        success: function(data) {
+            alert("Returned " + data);
+        },
+        error: function (e) {
+            alert("Error: " + e.message);
+        }
+    });
+}

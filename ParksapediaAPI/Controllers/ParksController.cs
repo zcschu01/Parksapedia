@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
+using ParksapediaAPI.Classes;
 
 namespace ParksapediaAPI.Controllers
 {
@@ -13,25 +14,18 @@ namespace ParksapediaAPI.Controllers
             return new string[] { "Acadia", "Montana" };
         }
 
-        // GET: api/Parks/5
-        public string Get(int id)
+        //POST: api/GetParks
+        [Route("api/GetParks")]
+        [HttpPost]
+        public bool Post([FromBody]Form form)
         {
-            return "value";
-        }
-
-        // POST: api/Parks
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT: api/Parks/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/Parks/5
-        public void Delete(int id)
-        {
+            if (form.landscapes != null &&
+                form.plants != null &&
+                form.region != null &&
+                form.wildlife != null)
+                return true;
+            else
+                return false;
         }
     }
 }
