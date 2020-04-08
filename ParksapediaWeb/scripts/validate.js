@@ -1,5 +1,7 @@
 function validate() {
-    let f = new form();
+    let f = new Form();
+    let data = new DataRequests();
+
     var regionValue = $("input[name='region-r']:checked").val();
     var dogValue = $("input[name='park-dog-friendly-r']:checked").val();
     var landscapeValues = $("input[name='landscape-c']:checked").map(function (_, el) {
@@ -13,14 +15,6 @@ function validate() {
     }).get();
     var lodgingValue = $("input[name='lodging-r']:checked").val();
     var campValue = $("input[name='camp-r']:checked").val();
-
-    console.log(regionValue + " was clicked");
-    console.log(dogValue + " was clicked");
-    console.log(landscapeValues + " was clicked");
-    console.log(wildlifeValues + " was clicked");
-    console.log(plantValues + " was clicked");
-    console.log(lodgingValue + " was clicked");
-    console.log(campValue + " was clicked");
 
     f.set_region(regionValue);
     if (dogValue == "Yes") {
@@ -46,6 +40,7 @@ function validate() {
     }
 
     f.save_form();
+    data.SendForm();
 
     // var delay = 2000; 
     // var url = 'hiking-section.html';
