@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
+using ParksapediaAPI.Models;
 
 namespace ParksapediaAPI.Controllers
 {
@@ -10,7 +12,17 @@ namespace ParksapediaAPI.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "Acadia", "Montana" };
+            // return new string[] { "Acadia", "Montana" };
+
+            Park park = new Park();
+            using (NationalParkContext ctx = new NationalParkContext())
+            {
+
+                park = ctx.Park.Where(p => p.Park1 == "Hawaii Volcanoes National Park").FirstOrDefault();
+            }
+
+            return new string[] { park.Park1, park.Camping };
+
         }
 
         // GET: api/Parks/5
