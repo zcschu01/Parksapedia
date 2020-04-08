@@ -4,7 +4,11 @@ class form {
     #landscapes = [];
     #wildlife = [];
     #plants = [];
-    constructor(){
+    #lodging = false;
+    #campgrounds = false;
+
+
+    constructor() {
         console.log("Made a new form");
     }
 
@@ -31,5 +35,15 @@ class form {
     set_plants(p) {
         this.#plants = p;
         console.log("Plants changed to " + this.#plants);
+    }
+
+    set_lodging(l) {
+        this.#lodging = l;
+        console.log("Lodging changed to " + this.#lodging);
+    }
+
+    set_campgrounds(c) {
+        this.#campgrounds = c;
+        console.log("Campgrounds changed to " + this.#campgrounds);
     }
 }
