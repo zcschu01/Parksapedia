@@ -1,4 +1,4 @@
-class form {
+class Form {
     #region = null;
     #park_dog_friendly = false;
     #landscapes = [];
