@@ -33,8 +33,6 @@ namespace ParksapediaAPI.Models
         {
             modelBuilder.Entity<Landscape>(entity =>
             {
-                entity.HasKey(e => e.ParkName)
-                    .HasName("PK__Landscap__D66747AE2F60B170");
 
                 entity.HasIndex(e => new { e.ParkName, e.Landscape1 })
                     .HasName("UQ__Landscap__8E1CA2F9B3CB2E91")
