@@ -9,7 +9,7 @@ namespace ParksapediaAPI.Controllers
     public class ParksController : ApiController
     {
         // GET: api/Parks
-        [Route("api/Parks")]
+        [Route("api/GetParks")]
         [HttpGet]
         public IEnumerable<string> Get()
         {
@@ -24,8 +24,7 @@ namespace ParksapediaAPI.Controllers
 
         }
 
-        // POST: api/GetParks
-        [Route("api/GetParks")]
+        [Route("api/SendForm")]
         [HttpPost]
         public bool Post([FromBody]Form form)
         {
