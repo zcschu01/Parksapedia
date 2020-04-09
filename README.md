@@ -15,7 +15,12 @@ Visual Studio
 
 ### Installing
 
-Go to https://visualstudio.microsoft.com/downloads/ and get the free Community version
+Go to https://visualstudio.microsoft.com/downloads/ and get the free Community version.
+
+### Running the project
+* Download Zip of the project
+* Open ParksapediaAPI and run the *.sln* file
+* Open ParksapediaWeb and double click the *index.html* file
 
 ## Built With
 
