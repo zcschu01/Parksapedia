@@ -19,8 +19,11 @@ Go to https://visualstudio.microsoft.com/downloads/ and get the free Community v
 
 ### Running the project
 * Download Zip of the project
-* Open ParksapediaAPI and run the *.sln* file
+* Open ParksapediaAPI
+  * Build Solution or hit F7
+  * Run the Solution, press the green arrow button for IIS Express
 * Open ParksapediaWeb and double click the *index.html* file
+* Fill out the form with your choices and hit submit
 
 ## Built With
 
