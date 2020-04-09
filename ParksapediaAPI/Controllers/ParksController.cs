@@ -24,7 +24,6 @@ namespace ParksapediaAPI.Controllers
 
         }
 
-        // GET: api/Parks
         [Route("api/SendForm")]
         [HttpPost]
         public bool Post([FromBody]Form form)
