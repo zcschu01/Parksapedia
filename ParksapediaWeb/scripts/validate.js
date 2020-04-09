@@ -41,8 +41,4 @@ function validate() {
 
     f.save_form();
     data.SendForm();
-
-    // var delay = 2000; 
-    // var url = 'hiking-section.html';
-    // setTimeout(function(){ window.location = url; }, delay);
 }
