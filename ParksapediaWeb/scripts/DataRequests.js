@@ -1,7 +1,7 @@
 class DataRequests {
 
-    #GET_PARKS = 'api/Parks';
-    #SEND_FORM = 'api/GetParks';
+    #GET_PARKS = 'api/GetParks';
+    #SEND_FORM = 'api/SendForm';
     #localUrl = 'https://localhost:44322/';
     
     GetParks() {
@@ -12,16 +12,15 @@ class DataRequests {
             crossDoman: true,
             dataType: "json",
             success: function (data) {
-                var pList = $('ul.parklist');
+                var pList = $('div.form');
                 $.each(data, function (i) {
+                    var ul = $('<ul/>')
+                        .addClass('parks')
+                        .appendTo(pList);
                     var li = $('<li/>')
                         .addClass('park-name')
                         .text(data[i])
-                        .appendTo(pList);
-                    // var aaa = $('<a/>')
-                    //     .addClass('ui-all')
-                    //     .text(countries[i])
-                    //     .appendTo(li);
+                        .appendTo(ul);
                 });
             },
             error: function (e) {
