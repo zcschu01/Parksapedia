@@ -20,7 +20,7 @@ Go to https://visualstudio.microsoft.com/downloads/ and get the free Community v
 ## Built With
 
 * [jQuery](https://jquery.com/)
-* [SQL] (https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15)
+* [SQL](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15)
 * C#
 * HTML5
 * CSS3
