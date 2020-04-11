@@ -27,7 +27,7 @@ namespace ParksapediaAPI.Controllers
 
         [Route("api/SendForm")]
         [HttpPost]
-        public IEnumerable<string> Post([FromBody]Form form)
+        public List<Park> Post([FromBody]Form form)
         {
 
             var reg = form.region;
@@ -127,17 +127,20 @@ namespace ParksapediaAPI.Controllers
             }
             var regionAndLandscapesAndContraintsAndPlantsAndWildlife = regionAndLandscapesAndContraintsAndPlants.Union(parksByWildlife);
 
+
+            List<Park> parkList = new List<Park>();
+
             using (NationalParkContext ctx = new NationalParkContext())
             {
                 foreach (var p in regionAndLandscapesAndContraintsAndPlantsAndWildlife)
                 {
                     var parkInfo = ctx.Park.Where(x => x.Park1 == p).FirstOrDefault();
-                    
+                    parkList.Add(parkInfo);
                 }
 
 
             }
-            return regionAndLandscapesAndContraintsAndPlantsAndWildlife;
+            return parkList;
 
         }
     }
