@@ -127,7 +127,16 @@ namespace ParksapediaAPI.Controllers
             }
             var regionAndLandscapesAndContraintsAndPlantsAndWildlife = regionAndLandscapesAndContraintsAndPlants.Union(parksByWildlife);
 
+            using (NationalParkContext ctx = new NationalParkContext())
+            {
+                foreach (var p in regionAndLandscapesAndContraintsAndPlantsAndWildlife)
+                {
+                    var parkInfo = ctx.Park.Where(x => x.Park1 == p).FirstOrDefault();
+                    
+                }
 
+
+            }
             return regionAndLandscapesAndContraintsAndPlantsAndWildlife;
 
         }

@@ -82,6 +82,12 @@ namespace ParksapediaAPI.Models
                     .HasColumnName("lodging")
                     .HasMaxLength(30)
                     .IsUnicode(false);
+
+                entity.Property(e => e.Link)
+                 .HasColumnName("link")
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+
             });
 
             modelBuilder.Entity<Plant>(entity =>
