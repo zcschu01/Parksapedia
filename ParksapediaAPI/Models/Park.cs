@@ -9,8 +9,7 @@ namespace ParksapediaAPI.Models
         public string DogFriendly { get; set; }
         public string Lodging { get; set; }
         public string Camping { get; set; }
-
         public string Link { get; set; }
-        public virtual Region Region { get; set; }
+
     }
 }
