@@ -3,7 +3,7 @@ class DataRequests {
     #GET_PARKS = 'api/GetParks';
     #SEND_FORM = 'api/SendForm';
     #localUrl = 'https://localhost:44322/';
-    
+
     GetParks() {
         $.ajax({
             type: "GET",
@@ -48,7 +48,10 @@ class DataRequests {
             url: this.#localUrl + this.#SEND_FORM,
             contentType: "application/json",
             success: function (data) {
-                alert("Returned " + data);
+                // alert("Returned " + data);
+                localStorage.clear();
+                localStorage.ParkList = JSON.stringify(data);
+                window.location.href = "results.html";
             },
             error: function (e) {
                 alert("Error: " + e.message);

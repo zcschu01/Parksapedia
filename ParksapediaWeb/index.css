@@ -21,7 +21,7 @@ body {
     text-align: center;
 }
 
-.form {
+.form, .form-results {
     margin-left: auto;
     margin-right: auto;
     background: rgba(255, 255, 255, 0.75);
@@ -46,4 +46,8 @@ body {
 
 .question-header{
     color: red;
+}
+
+.parks {
+    list-style-type: none;
 }
