@@ -121,8 +121,7 @@ namespace ParksapediaAPI.Models
 
             modelBuilder.Entity<Region>(entity =>
             {
-                entity.HasKey(e => e.ParkName)
-                    .HasName("PK__Region__D66747AED37E35F0");
+                entity.HasNoKey();
 
                 entity.Property(e => e.ParkName)
                     .HasColumnName("park_name")
@@ -135,8 +134,8 @@ namespace ParksapediaAPI.Models
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.ParkNameNavigation)
-                    .WithOne(p => p.Region)
-                    .HasForeignKey<Region>(d => d.ParkName)
+                    .WithMany()
+                    .HasForeignKey(d => d.ParkName)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Region__park_nam__4BAC3F29");
             });
