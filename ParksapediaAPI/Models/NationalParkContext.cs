@@ -25,6 +25,7 @@ namespace ParksapediaAPI.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Server=softwareeng.database.windows.net;Database=NationalPark; User Id=software; Password =Louisville20;Trusted_Connection=False;Encrypt=True");
             }
         }
@@ -33,24 +34,26 @@ namespace ParksapediaAPI.Models
         {
             modelBuilder.Entity<Landscape>(entity =>
             {
+                entity.HasNoKey();
 
                 entity.HasIndex(e => new { e.ParkName, e.Landscape1 })
                     .HasName("UQ__Landscap__8E1CA2F9B3CB2E91")
                     .IsUnique();
-
-                entity.Property(e => e.ParkName)
-                    .HasColumnName("park_name")
-                    .HasMaxLength(255)
-                    .IsUnicode(false);
 
                 entity.Property(e => e.Landscape1)
                     .HasColumnName("landscape")
                     .HasMaxLength(255)
                     .IsUnicode(false);
 
+                entity.Property(e => e.ParkName)
+                    .IsRequired()
+                    .HasColumnName("park_name")
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+
                 entity.HasOne(d => d.ParkNameNavigation)
-                    .WithOne(p => p.Landscape)
-                    .HasForeignKey<Landscape>(d => d.ParkName)
+                    .WithMany()
+                    .HasForeignKey(d => d.ParkName)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Landscape__park___4F7CD00D");
             });

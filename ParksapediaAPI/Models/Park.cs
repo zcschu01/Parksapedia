@@ -10,7 +10,6 @@ namespace ParksapediaAPI.Models
         public string Lodging { get; set; }
         public string Camping { get; set; }
 
-        public virtual Landscape Landscape { get; set; }
         public virtual Region Region { get; set; }
     }
 }
