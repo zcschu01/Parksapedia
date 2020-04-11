@@ -73,7 +73,7 @@ namespace ParksapediaAPI.Controllers
                 }
             }
 
-            var regionAndContraints = parksToUse.Union(parkContraints);
+            var regionAndContraints = parksToUse.Intersect(parkContraints);
 
             List<string> landscapeParks = new List<string>();
             ///narrow list of parks by landscape
@@ -91,7 +91,7 @@ namespace ParksapediaAPI.Controllers
                 }
             }
 
-            var regionAndLandscapesAndContraints = regionAndContraints.Union(landscapeParks);
+            var regionAndLandscapesAndContraints = regionAndContraints.Intersect(landscapeParks);
 
             List<string> parksByPlant = new List<string>();
             //narrow list of parks by plants
@@ -108,7 +108,7 @@ namespace ParksapediaAPI.Controllers
                 }
             }
 
-            var regionAndLandscapesAndContraintsAndPlants = regionAndLandscapesAndContraints.Union(parksByPlant);
+            var regionAndLandscapesAndContraintsAndPlants = regionAndLandscapesAndContraints.Intersect(parksByPlant);
 
             //narrow list of parks by wildlife
             List<string> parksByWildlife = new List<string>();
@@ -125,7 +125,7 @@ namespace ParksapediaAPI.Controllers
                     }
                 }
             }
-            var regionAndLandscapesAndContraintsAndPlantsAndWildlife = regionAndLandscapesAndContraintsAndPlants.Union(parksByWildlife);
+            var regionAndLandscapesAndContraintsAndPlantsAndWildlife = regionAndLandscapesAndContraintsAndPlants.Intersect(parksByWildlife);
 
 
             List<Park> parkList = new List<Park>();
