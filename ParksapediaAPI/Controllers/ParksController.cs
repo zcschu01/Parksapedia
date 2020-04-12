@@ -45,49 +45,54 @@ namespace ParksapediaAPI.Controllers
                 }
             }
             //dog friendly, lodging and campgrounds - in the parks table
-            List<string> parkContraints = new List<string>();
+            List<string> parkConstraints = new List<string>();
             using (NationalParkContext ctx = new NationalParkContext())
             {
                 List<Park> parks = new List<Park>();
-                var camping = "no";
-                var lodging = "no";
-                var dogs = "no";
-                if (form.campgrounds)
-                {
-                    camping = "yes";
-                    var parksCamping = ctx.Park.Where(r => (r.Camping == camping)).ToList();
+                var camping = "yes";
+                var lodging = "yes";
+                var dogs = "yes";
 
-                    foreach (var pc in parksCamping)
-                    {
-                        parks.Add(pc);
-                    }
+                if(form.campgrounds && form.lodging && form.park_dog_friendly)
+                {
+                    parks = ctx.Park.Where(r => ((r.DogFriendly == dogs) || (r.DogFriendly == "restricted areas")) && (r.Lodging == lodging) && (r.Camping == camping)).ToList();
                 }
-
-                List<Park> lPark = new List<Park>();
-
-                if (form.lodging)
+                else if (form.campgrounds && form.lodging)
                 {
-                    lodging = "yes";
-                    lPark = ctx.Park.Where(r => (r.Lodging == lodging)).ToList();
-                    parks = lPark.Intersect(parks).ToList();
-
+                    parks = ctx.Park.Where(r => (r.Lodging == lodging) && (r.Camping == camping)).ToList();
                 }
-                List<Park> parksDog = new List<Park>();
-                if (form.park_dog_friendly)
+                else if (form.campgrounds && form.park_dog_friendly)
                 {
-                    dogs = "yes";
-                    parksDog = ctx.Park.Where(r => ((r.DogFriendly == dogs) || (r.DogFriendly == "restricted areas"))).ToList();
-
-                    parks = parksDog.Intersect(parks).ToList();
+                    parks = ctx.Park.Where(r => ((r.DogFriendly == dogs) || (r.DogFriendly == "restricted areas")) && (r.Camping == camping)).ToList();
+                }
+                else if (form.lodging && form.park_dog_friendly)
+                {
+                    parks = ctx.Park.Where(r => ((r.DogFriendly == dogs) || (r.DogFriendly == "restricted areas")) && (r.Lodging == lodging)).ToList();
+                }
+                else if (form.campgrounds)
+                {
+                    parks = ctx.Park.Where(r => (r.Camping == camping)).ToList();
+                }
+                else if (form.lodging)
+                {
+                    parks = ctx.Park.Where(r => (r.Lodging == lodging)).ToList();
+                }
+                else if (form.park_dog_friendly)
+                {
+                    parks = ctx.Park.Where(r => ((r.DogFriendly == dogs) || (r.DogFriendly == "restricted areas"))).ToList();
+                }
+                else
+                {
+                    parks = ctx.Park.Where(r => ((r.DogFriendly == dogs) || (r.DogFriendly == "restricted areas" || r.DogFriendly == "no")) && (r.Lodging == lodging || r.Lodging == "no") && (r.Camping == camping || r.Camping == "no")).ToList();
                 }
 
                 foreach (var p in parks)
                 {
-                    parkContraints.Add(p.Park1);
+                    parkConstraints.Add(p.Park1);
                 }
             }
 
-            var regionAndContraints = parksToUse.Intersect(parkContraints);
+            var regionAndContraints = parksToUse.Intersect(parkConstraints);
 
             List<string> landscapeParks = new List<string>();
             ///narrow list of parks by landscape
