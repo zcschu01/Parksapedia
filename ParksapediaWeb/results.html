@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Parksapedia</title>
+  <meta name="description" content="Find all your National Parks' needs here!">
+  <meta name="author" content="GMACS">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+      var data = localStorage.ParkList;
+      $.each(data, function (i) {
+        var pList = $('div.form-results');
+        var ul = $('<ul/>')
+          .addClass('parks')
+          .appendTo(pList);
+        var li = $('<li/>')
+          .appendTo(ul);
+        var link = $('<a/')
+          .attr('href', data[i].Link)
+          .appendTo(li);
+        var title = $('<h2/>')
+          .addClass('park-name')
+          .text(data[i].Park1)
+          .appendTo(link);
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <h1 class="title">Our Recommendations...</h1>
+  <div class="form-results"></div>
+</body>
+
+</html>
