@@ -11,22 +11,31 @@
     crossorigin="anonymous"></script>
   <script>
     $(document).ready(function () {
-      var data = localStorage.ParkList;
-      $.each(data, function (i) {
-        var pList = $('div.form-results');
+      var data = JSON.parse(localStorage.getItem("ParkList"));
+      var pList = $('div.form-results');
+      if(data.length == 0) {
+        var title = $('<h2/>')
+        .addClass('error')
+        .text('Could not find any parks matching your specifications. Try a different selection!')
+        .appendTo(pList);
+      }
+      else {
         var ul = $('<ul/>')
           .addClass('parks')
           .appendTo(pList);
-        var li = $('<li/>')
-          .appendTo(ul);
-        var link = $('<a/')
-          .attr('href', data[i].Link)
-          .appendTo(li);
-        var title = $('<h2/>')
-          .addClass('park-name')
-          .text(data[i].Park1)
-          .appendTo(link);
-      });
+        $.each(data, function (i) {
+          var li = $('<li/>')
+            .appendTo(ul);
+          var link = $('<a/>')
+            .attr('href', data[i].Link)
+            .attr('target', '_blank')
+            .appendTo(li);
+          var title = $('<h2/>')
+            .addClass('park-name')
+            .text(data[i].Park1)
+            .appendTo(link);
+        });
+      }
     });
   </script>
 </head>

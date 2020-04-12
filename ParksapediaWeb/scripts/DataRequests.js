@@ -48,11 +48,12 @@ class DataRequests {
             url: this.#localUrl + this.#SEND_FORM,
             contentType: "application/json",
             success: function (data) {
-                localStorage.ParkList = JSON.stringify(data);
-                alert("Returned " + data[0].Park1 + " " + data[0].Link);
-                // localStorage.clear();
                 // localStorage.ParkList = JSON.stringify(data);
-                // window.location.href = "results.html";
+                // var d = JSON.parse(localStorage.getItem("ParkList"));
+                // alert("Returned " + d[0].Park1 + " " + d[0].Link);
+                localStorage.clear();
+                localStorage.ParkList = JSON.stringify(data);
+                window.location.href = "results.html";
             },
             error: function (e) {
                 alert("Error: " + e.message);
