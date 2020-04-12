@@ -48,24 +48,38 @@ namespace ParksapediaAPI.Controllers
             List<string> parkContraints = new List<string>();
             using (NationalParkContext ctx = new NationalParkContext())
             {
+                List<Park> parks = new List<Park>();
                 var camping = "no";
                 var lodging = "no";
                 var dogs = "no";
                 if (form.campgrounds)
                 {
                     camping = "yes";
+                    var parksCamping = ctx.Park.Where(r => (r.Camping == camping)).ToList();
+
+                    foreach (var pc in parksCamping)
+                    {
+                        parks.Add(pc);
+                    }
                 }
+
+                List<Park> lPark = new List<Park>();
+
                 if (form.lodging)
                 {
                     lodging = "yes";
+                    lPark = ctx.Park.Where(r => (r.Lodging == lodging)).ToList();
+                    parks = lPark.Intersect(parks).ToList();
+
                 }
+                List<Park> parksDog = new List<Park>();
                 if (form.park_dog_friendly)
                 {
                     dogs = "yes";
+                    parksDog = ctx.Park.Where(r => ((r.DogFriendly == dogs) || (r.DogFriendly == "restricted areas"))).ToList();
+
+                    parks = parksDog.Intersect(parks).ToList();
                 }
-
-
-                var parks = ctx.Park.Where(r => (r.DogFriendly == dogs) || (r.DogFriendly == "restricted areas") && (r.Lodging == lodging) && (r.Camping == camping)).ToList();
 
                 foreach (var p in parks)
                 {
