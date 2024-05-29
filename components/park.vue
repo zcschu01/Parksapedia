@@ -32,11 +32,8 @@ const loading = props.index > 1 ? 'lazy' : 'eager'
   line-height: 0;
   -webkit-column-count: 5;
   -webkit-column-gap: 5px;
-  -webkit-row-gap: 5px;
   -moz-column-count: 5;
   -moz-column-gap: 5px;
-  -moz-row-gap: 5px;
-  row-gap: 5px;
   column-count: 5;
   column-gap: 5px;
   display: inline-block;
