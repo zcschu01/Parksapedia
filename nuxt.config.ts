@@ -2,6 +2,8 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
+  css: ['~/assets/styles/google-fonts.css'],
+
   runtimeConfig: {
     // SSR keys
     NPS_API_KEY: '',
@@ -15,4 +17,31 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@nuxt/image"
   ],
+
+  tailwindcss: {
+    config: {
+      theme: {
+        fontFamily: {
+          lato: 'Lato'
+        }
+      }
+    }
+  },
+
+  googleFonts: {
+    families: {
+      Lato: [300, 400, 700]
+    },
+    download: true,
+    display: 'swap',
+    prefetch: false,
+    preconnect: false,
+    preload: false,
+    base64: false,
+    outputDir: 'assets',
+    fontsDir: 'fonts',
+    stylePath: 'styles/google-fonts.css',
+    fontsPath: 'assets/fonts',
+    overwriting: true,
+  },
 })

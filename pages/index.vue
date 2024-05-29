@@ -5,7 +5,7 @@
 </script>
 <template>
   <div class="p-[10px]">
-    <h1 class="text-[64px]">List of National Parks</h1>
+    <h1 class="text-[64px] font-lato font-bold">List of National Parks</h1>
     <div class="flex flex-col gap-y-[20px]">
       <Park v-for="(park, index) in data" :key="park.id" :park="park" :index="index"/>
     </div>

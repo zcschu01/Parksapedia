@@ -1,12 +1,12 @@
 <template>
-  <div class="flex flex-col gap-y-[10px]">
+  <div class="flex flex-col gap-y-[10px] font-lato">
     <a v-if="park.url" :href="park.url">
-      <h2 class="text-[20px]">{{ park.fullName }}</h2>
+      <h2 class="text-[20px] font-normal">{{ park.fullName }}</h2>
     </a>
     <h2 v-else class="text-[20px]">{{ park.fullName }}</h2>
-    <p class="text-[14px]">{{ park.description }}</p>
+    <p class="text-[14px] font-light">{{ park.description }}</p>
     <div class="images-wrapper">
-      <NuxtImg v-for="image in park.images" :src="image.url" :alt="image.altText" height="250" width="250" :loading="loading" decoding="async" class="rounded-md mb-[5px]" :placeholder="[250, 250, 75, 5]" />
+      <NuxtImg v-for="image in park.images" :src="image.url" :alt="image.altText" height="250" width="250" :loading="loading" decoding="async" class="rounded-md mb-[5px]" />
     </div>
   </div>
 </template>
