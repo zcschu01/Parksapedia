@@ -1,6 +1,12 @@
+import path from 'path';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
+  alias: {
+    '~': path.resolve(__dirname)
+  },
 
   css: ['~/assets/styles/google-fonts.css'],
 
