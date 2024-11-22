@@ -5,54 +5,64 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   alias: {
-    '~': path.resolve(__dirname)
+    "~": path.resolve(__dirname),
   },
 
-  css: ['~/assets/styles/google-fonts.css'],
+  css: ["~/assets/styles/google-fonts.css", "~/assets/main.css"],
 
   runtimeConfig: {
     // SSR keys
-    NPS_API_KEY: '',
+    NPS_API_KEY: "",
     public: {
       // CSR keys
-    }
+    },
   },
 
   modules: [
     "@nuxtjs/tailwindcss",
     "@nuxtjs/google-fonts",
+    "@nuxtjs/supabase",
     "@nuxt/image",
-    '@nuxt/eslint',
-    '@nuxt/test-utils/module',
-    '@pinia/nuxt'
+    "@nuxt/eslint",
+    "@nuxt/test-utils/module",
+    "@pinia/nuxt",
   ],
 
   tailwindcss: {
     config: {
       theme: {
         fontFamily: {
-          lato: 'Lato'
-        }
-      }
-    }
+          lato: "Lato",
+        },
+      },
+    },
+  },
+
+  supabase: {
+    redirectOptions: {
+      login: "/login",
+      callback: "/login",
+      exclude: ['/', '/been-there-done-that'],
+      cookieRedirect: false,
+    },
   },
 
   googleFonts: {
     families: {
-      Lato: [300, 400, 700]
+      Lato: [300, 400, 700],
     },
     download: true,
-    display: 'swap',
+    display: "swap",
     prefetch: false,
     preconnect: false,
     preload: false,
     base64: false,
-    outputDir: 'assets',
-    fontsDir: 'fonts',
-    stylePath: 'styles/google-fonts.css',
-    fontsPath: 'assets/fonts',
+    outputDir: "assets",
+    fontsDir: "fonts",
+    stylePath: "styles/google-fonts.css",
+    fontsPath: "assets/fonts",
     overwriting: true,
   },
 
-  compatibilityDate: '2024-11-21',
-})
+  compatibilityDate: "2024-11-21",
+});

@@ -29,11 +29,15 @@
     "@nuxt/test-utils": "^3.14.4",
     "@nuxtjs/supabase": "^1.4.3",
     "@vue/test-utils": "^2.4.6",
+    "eslint": "^9.15.0",
     "eslint-plugin-import": "^2.31.0",
     "happy-dom": "^15.11.6",
     "husky": "^9.1.7",
     "playwright-core": "^1.49.0",
+    "prettier": "^3.3.3",
+    "prettier-eslint": "^16.3.0",
     "typescript": "^5.6.3",
-    "vitest": "^2.1.5"
+    "vitest": "^2.1.5",
+    "vue-eslint-parser": "^9.4.3"
   }
 }
