@@ -4,6 +4,9 @@ import withNuxt from './.nuxt/eslint.config.mjs';
 export default withNuxt(
 	// Your custom configs here
 	{
+		ignores: ['node_modules', 'server/json', '.output', '.nuxt', '.husky']
+	},
+	{
 		rules: {
 			'prefer-arrow-callback': 'error',
 			'vue/multi-word-component-names': 'off',
