@@ -2,6 +2,8 @@
   import type { ParkData } from '~/models/park';
 
   const { data } = await useFetch<Array<ParkData>>('/api/parks', { key: 'parks' })
+  const parkStore = useParkStore()
+  parkStore.setParks(data.value ?? [])
 </script>
 <template>
   <div class="p-[10px]">
