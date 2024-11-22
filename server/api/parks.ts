@@ -1,5 +1,5 @@
 import { isToday } from 'date-fns/isToday';
-import { Park, ParkData } from '~/models/park';
+import type { Park, ParkData } from '~/models/park';
 import nationalParksList from '~/server/json/national_parks_list.json';
 
 export default defineEventHandler(async (event) => {
