@@ -23,7 +23,8 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@nuxt/image",
     '@nuxt/eslint',
-    '@nuxt/test-utils/module'
+    '@nuxt/test-utils/module',
+    '@pinia/nuxt'
   ],
 
   tailwindcss: {
