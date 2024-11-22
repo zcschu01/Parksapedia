@@ -23,6 +23,7 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@nuxt/image",
     '@nuxt/eslint',
+    '@nuxt/test-utils/module'
   ],
 
   tailwindcss: {
@@ -51,4 +52,6 @@ export default defineNuxtConfig({
     fontsPath: 'assets/fonts',
     overwriting: true,
   },
+
+  compatibilityDate: '2024-11-21',
 })
